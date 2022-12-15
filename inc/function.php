@@ -20,4 +20,15 @@
         }
         return $result;
     }
+
+    function getUser($connection, $user, $mdp){
+        $data = $connection->query("SELECT * FROM client WHERE email='".$user."' AND mdp='".$mdp."'");
+        $rows = $data->fetchAll();
+        $result = array();
+        foreach($rows as $row) {
+            $i = array("id"=>$row['idclient'], "nom"=>$row['nom'], "mdp"=>$row['mdp'], "email"=>$row['email'], "tel"=>$row['tel']);
+            $result[]=$i;
+        }
+        return $result;
+    }
 ?>

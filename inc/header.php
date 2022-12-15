@@ -1,8 +1,8 @@
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light bg-light fixed-top">
         <div class="container">
-        <a class="navbar-brand" href="index.php">Airbnb</a>
+        <a class="navbar-brand" href="index.php"><img src="asset/Airbnb_Logo_Bélo.svg.png" width="150px" alt="" srcset=""></a>
         <form action="search.php" class="searchform">
-            <h5 class="titre">Rechercher</h5>
+            <span class="titre">Rechercher</span>
             <input type="text" name="search" id="search">
             <input type="submit" value="Rechercher" id="destroy">
         </form>
@@ -20,6 +20,9 @@
                     </li>
                 <?php } 
                 else { ?>
+                    <li class="nav-item active">
+                        <p><?php echo $_SESSION["name"]; ?></p>
+                    </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="inc/Deconnexion.php">Deconnexion</a>
                     </li>
